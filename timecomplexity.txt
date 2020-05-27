@@ -1,0 +1,9 @@
+Task0 - I believe this is O(1) since we are only seeking the first and the last element of given lists. Regardless of list size, we only seek the first or last index.
+
+Task1 - I believe this is O(n) since we need to loop through the given lists and the list that we create and append to.
+
+Task2 - I believe this is O(n log(n)) since we are creating a dictionary and then need to sort it.
+
+Task3 - I believe this is O(n log(n)) since we are creating a list and then we need to sort it.
+
+Task4 - I believe this is O(n log(n)) since we are creating a list and then we need to sort it.
