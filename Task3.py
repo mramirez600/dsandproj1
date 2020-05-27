@@ -12,7 +12,6 @@ with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
     counter = 0
-    counter2 = 0
     unique_list = []
     openBracket = 0
     mobile = ["7", "8", "9"]
@@ -22,16 +21,15 @@ with open('calls.csv', 'r') as f:
     uniqueCodes = []
 
     for a in calls:
-        if a[0] not in unique_list:
-            unique_list.append(a[0])
-            counter2 += 1
-        if a[1] not in unique_list:
+        if a[0][:4] == "(080" and a[1] not in unique_list:
             unique_list.append(a[1])
-            counter2 += 1
 
+    co = []
     for c in calls:
-        if c[0][:1] == "(" and c[1][:1] == "(":
+        if c[0][:4] == "(080" and c[1][:4] == "(080":
             counter += 1
+        if c[0][:4] == "(080":
+            co.append(c[0])
 
     for b in unique_list:
         if b[:1] == "(" and b[:b.index(")")+1] not in uniqueCodes:
@@ -46,10 +44,12 @@ print("The numbers called by people in Bangalore have codes:")
 for d in uniqueCodes:
     print(d)
 
-callPercentage = float(counter)/len(calls)
+callPercentage = float(counter)/len(co)
 
 print("\n" + str(round(callPercentage, 2)) +
       " percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
+
+
 """
 TASK 3:
 (080) is the area code for fixed line telephones in Bangalore.
