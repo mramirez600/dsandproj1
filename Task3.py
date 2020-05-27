@@ -44,9 +44,9 @@ print("The numbers called by people in Bangalore have codes:")
 for d in uniqueCodes:
     print(d)
 
-callPercentage = float(counter)/len(co)
+callPercentage = round(counter/len(co) * 100, 2)
 
-print("\n" + str(round(callPercentage, 2)) +
+print("\n" + str(callPercentage) +
       " percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
 
 
